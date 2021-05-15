@@ -2,16 +2,22 @@
 #include "ui_mainwindow.h"
 #include "view.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow()
+    : mdiArea(new QMdiArea)
 {
-        ui->setupUi(this);
+    mdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    mdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    setCentralWidget(mdiArea);
+
     XY = createMdiChild();
     XY->autoFillBackground();
-    XY->showMaximized();
-    //MDI_View *YZ = createMdiChild();
-    //MDI_View *XZ = createMdiChild();
+    XY->show();
+    MDI_View *YZ = createMdiChild();
+    YZ->autoFillBackground();
+    YZ->show();
+    MDI_View *XZ = createMdiChild();
+    XZ->autoFillBackground();
+    XZ->show();
 
 
 }
