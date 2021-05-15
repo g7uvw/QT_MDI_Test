@@ -11,12 +11,20 @@ class QMdiSubWindow;
 class MDI_View;
 QT_END_NAMESPACE
 
+class MdiChild;
+QT_BEGIN_NAMESPACE
+class QAction;
+class QMenu;
+class QMdiArea;
+class QMdiSubWindow;
+QT_END_NAMESPACE
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow();
     ~MainWindow();
 
 private:
