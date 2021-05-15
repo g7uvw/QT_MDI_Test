@@ -7,7 +7,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
         ui->setupUi(this);
-    MDI_View *XY = createMdiChild();
+    XY = createMdiChild();
+    XY->autoFillBackground();
+    XY->showMaximized();
     //MDI_View *YZ = createMdiChild();
     //MDI_View *XZ = createMdiChild();
 

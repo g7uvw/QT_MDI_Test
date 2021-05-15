@@ -11,5 +11,15 @@ MDI_View::MDI_View()
     setCentralWidget(view);
 
     // cargo cult programming - https://stackoverflow.com/questions/32714105/mousemoveevent-is-not-called
-    QCoreApplication::instance()->installEventFilter(this);
+    //QCoreApplication::instance()->installEventFilter(this);
+}
+
+
+void MDI_View::ShowSlice()
+{
+    scene->clear();
+    image = QPixmap(":/images/XY.png");
+    scene->addPixmap(image);
+    scene->update();
+    view->update();
 }

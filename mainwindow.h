@@ -22,6 +22,9 @@ public:
 private:
     Ui::MainWindow *ui;
     QMdiArea *mdiArea;
+    MDI_View *XY;
+    MDI_View *XZ;
+    MDI_View *YZ;
 
 private slots:
     MDI_View *createMdiChild();
