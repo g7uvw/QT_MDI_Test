@@ -19,7 +19,7 @@ MainWindow::MainWindow()
     XZ->autoFillBackground();
     XZ->show();
 
-
+    XY->ShowSlice ();
 }
 
 MainWindow::~MainWindow()
@@ -30,6 +30,6 @@ MainWindow::~MainWindow()
 MDI_View *MainWindow::createMdiChild()
 {
     MDI_View *child = new MDI_View;
-    //mdiArea->addSubWindow(child);
+    mdiArea->addSubWindow(child);
     return child;
 }
