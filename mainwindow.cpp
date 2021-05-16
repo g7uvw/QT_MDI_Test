@@ -11,20 +11,19 @@ MainWindow::MainWindow()
 
     XY = createMdiChild();
     XY->autoFillBackground();
-    XY->show();
+    XY->showNormal();
     MDI_View *YZ = createMdiChild();
     YZ->autoFillBackground();
-    YZ->show();
+    YZ->showNormal();
     MDI_View *XZ = createMdiChild();
     XZ->autoFillBackground();
-    XZ->show();
-
-    XY->ShowSlice ();
+    XZ->showNormal();
+    XY->ShowSlice();
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+    //delete ui;
 }
 
 MDI_View *MainWindow::createMdiChild()
