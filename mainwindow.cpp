@@ -11,14 +11,19 @@ MainWindow::MainWindow()
 
     XY = createMdiChild();
     XY->autoFillBackground();
+    XY->setWindowTitle("XY");
     XY->showNormal();
     MDI_View *YZ = createMdiChild();
     YZ->autoFillBackground();
+    YZ->setWindowTitle("YZ");
     YZ->showNormal();
     MDI_View *XZ = createMdiChild();
     XZ->autoFillBackground();
+    XZ->setWindowTitle("XZ");
     XZ->showNormal();
-    XY->ShowSlice();
+    XY->ShowSlice(XYPLANE);
+    YZ->ShowSlice(YZPLANE);
+    XZ->ShowSlice(XZPLANE);
 }
 
 MainWindow::~MainWindow()

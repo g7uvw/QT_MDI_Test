@@ -20,7 +20,7 @@ class MDI_View : public QMainWindow
      Q_OBJECT
 public:
     MDI_View();
-    void ShowSlice();
+    void ShowSlice(const short plane);
 
 private:
     bool isUntitled;

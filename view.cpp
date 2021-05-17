@@ -2,7 +2,7 @@
 
 MDI_View::MDI_View()
 {
-    setWindowTitle("New");
+    //setWindowTitle("New");
     setAttribute(Qt::WA_DeleteOnClose);
     isUntitled = true;
     view = new QGraphicsView;
@@ -15,11 +15,25 @@ MDI_View::MDI_View()
 }
 
 
-void MDI_View::ShowSlice()
+void MDI_View::ShowSlice(const short plane)
 {
     scene->clear();
-    image = QPixmap(":/images/XY.png");
+    if (plane == XYPLANE)
+    {
+        image = QPixmap(":/images/XY.png");
+    }
+    else if (plane == YZPLANE)
+    {
+        image = QPixmap(":/images/YZ.png");
+    }
+    else
+        image = QPixmap(":/images/XZ.png");
+
     scene->addPixmap(image);
     scene->update();
+    auto width = image.width();
+    auto height = image.height();
+    view->resize(width,height);
+    view->resize(scene->width(),scene->height());
     view->update();
 }
