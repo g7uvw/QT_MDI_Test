@@ -5,7 +5,7 @@
 MainWindow::MainWindow(const short plane)
     : viewArea(new QGraphicsView)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
+    //setAttribute(Qt::WA_DeleteOnClose);
     isUntitled = true;
     view = new QGraphicsView;
     scene = new QGraphicsScene(0, 0, this->x(), this->y(), this);

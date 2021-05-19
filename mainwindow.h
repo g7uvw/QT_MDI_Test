@@ -2,13 +2,23 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "view.h"
+#include <QMainWindow>
+#include <QObject>
+#include <QWidget>
+#include <QPainter>
+#include <QtWidgets>
+#include <QtCore>
+#include <QWheelEvent>
+//#include "view.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
-//class QMdiArea;
-//class QMdiSubWindow;
-//class MDI_View;
+class QGraphicsView;
+class QGraphicsItem;
+class QPixmap;
+////class QMdiArea;
+////class QMdiSubWindow;
+////class MDI_View;
 QT_END_NAMESPACE
 
 //class MdiChild;
