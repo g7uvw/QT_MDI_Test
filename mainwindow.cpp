@@ -5,12 +5,11 @@
 MainWindow::MainWindow(const short plane)
     : viewArea(new QGraphicsView)
 {
-    //setAttribute(Qt::WA_DeleteOnClose);
-    isUntitled = true;
-    view = new QGraphicsView;
+    //isUntitled = true;
+    viewArea = new QGraphicsView;
     scene = new QGraphicsScene(0, 0, this->x(), this->y(), this);
-    view->setScene(scene);
-    setCentralWidget(view);
+    viewArea->setScene(scene);
+    //setCentralWidget(view);
     setCentralWidget(viewArea);
 
     ShowSlice(plane);
@@ -52,7 +51,7 @@ void MainWindow::ShowSlice(const short plane)
     scene->update();
     auto width = image.width();
     auto height = image.height();
-    view->resize(width,height);
-    view->resize(scene->width(),scene->height());
-    view->update();
+    viewArea->resize(width,height);
+    viewArea->resize(scene->width(),scene->height());
+    viewArea->update();
 }
