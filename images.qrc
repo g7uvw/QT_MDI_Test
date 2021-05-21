@@ -4,4 +4,14 @@
         <file>XZ.png</file>
         <file>YZ.png</file>
     </qresource>
+    <qresource prefix="/icons">
+        <file>XZ_icon.png</file>
+        <file>YZ_icon.png</file>
+        <file>XY_icon.png</file>
+        <file>zoom_icon.png</file>
+        <file>ℹ️.png</file>
+        <file>27.png</file>
+        <file>⬇︎.png</file>
+        <file>⬆︎.png</file>
+    </qresource>
 </RCC>
