@@ -6,7 +6,7 @@ ToolBar::ToolBar()
     :   ui(new Ui::ToolBar)
 {
      ui->setupUi(this);
-
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
 //    //isUntitled = true;
 //    viewArea = new QGraphicsView;
 //    scene = new QGraphicsScene(0, 0, this->x(), this->y(), this);
