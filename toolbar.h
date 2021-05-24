@@ -8,7 +8,7 @@
 #include <QtWidgets>
 #include <QtCore>
 #include <QWheelEvent>
-
+#include "mainwindow.h"
 
 //QT_BEGIN_NAMESPACE
 namespace Ui { class ToolBar;}
@@ -31,14 +31,18 @@ public:
 
 private:
     Ui::ToolBar *ui;
-    //QGraphicsView *viewArea;
-
-
     bool isUntitled;
+    bool XY_on = true;
+    bool XZ_on = false;
+    bool YZ_on = false;
 
+    Ui::MainWindow *XY;
+    Ui::MainWindow *YZ;
+    Ui::MainWindow *XZ;
 
 
 private slots:
 
+    void on_actionXY_toggled(bool arg1);
 };
 #endif // TOOLBAR_H

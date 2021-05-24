@@ -1,25 +1,28 @@
 #include "toolbar.h"
 #include "ui_toolbar.h"
+#include "ui_mainwindow.h"
+#include "mainwindow.h"
 
 
 ToolBar::ToolBar()
-    :   ui(new Ui::ToolBar)
+    :   ui(new Ui::ToolBar), XY(new Ui::MainWindow)
 {
      ui->setupUi(this);
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
-//    //isUntitled = true;
-//    viewArea = new QGraphicsView;
-//    scene = new QGraphicsScene(0, 0, this->x(), this->y(), this);
-//    viewArea->setScene(scene);
-//    //setCentralWidget(view);
-//    setCentralWidget(viewArea);
 
-    //ShowSlice(plane);
+
+ //       MainWindow *XY = new MainWindow(XYPLANE);
+        //MainWindow *YZ = new MainWindow(YZPLANE);
+        //MainWindow *XZ = new MainWindow(XZPLANE);
+//        XY->show();
+    //    YZ.show();
+    //    XZ.show();
 
 }
 
 ToolBar::~ToolBar()
 {
+    QCoreApplication::quit();
     //delete ui;
 }
 
@@ -31,3 +34,11 @@ ToolBar::~ToolBar()
 //}
 
 
+
+void ToolBar::on_actionXY_toggled(bool arg1)
+{
+    if (XY_on)
+    {
+        //XY->hide();
+    }
+}

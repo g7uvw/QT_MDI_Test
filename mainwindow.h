@@ -38,9 +38,11 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(const short plane);
+    MainWindow();
+    //MainWindow(const short plane);
     ~MainWindow();
-    void ShowSlice(const short plane);
+    void SetPlane(const short plane);
+    void ShowSlice(size_t slice);
 
 
 private:
@@ -50,6 +52,8 @@ private:
     //MDI_View *XY;
    // MDI_View *XZ;
     //MDI_View *YZ;
+
+    short m_plane;
 
     bool isUntitled;
     QGraphicsView *view;

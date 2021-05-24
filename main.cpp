@@ -9,12 +9,12 @@ int main(int argc, char *argv[])
     ToolBar tb;
     tb.show();
 
-    MainWindow XY(XYPLANE);
-    MainWindow YZ(YZPLANE);
-    MainWindow XZ(XZPLANE);
-    XY.show();
-    YZ.show();
-    XZ.show();
+//    MainWindow XY(XYPLANE);
+//    MainWindow YZ(YZPLANE);
+//    MainWindow XZ(XZPLANE);
+//    XY.show();
+//    YZ.show();
+//    XZ.show();
 
 
     return a.exec();

@@ -2,7 +2,8 @@
 #include "ui_mainwindow.h"
 //#include "view.h"
 
-MainWindow::MainWindow(const short plane)
+//MainWindow::MainWindow(const short plane)
+MainWindow::MainWindow()
     : viewArea(new QGraphicsView)
 {
     //isUntitled = true;
@@ -12,31 +13,29 @@ MainWindow::MainWindow(const short plane)
     //setCentralWidget(view);
     setCentralWidget(viewArea);
 
-    ShowSlice(plane);
+    //ShowSlice(plane);
 
 }
 
 MainWindow::~MainWindow()
 {
-    //delete ui;
 }
 
-//MDI_View *MainWindow::createMdiChild()
-//{
-//    MDI_View *child = new MDI_View;
-//    mdiArea->addSubWindow(child);
-//    return child;
-//}
 
-void MainWindow::ShowSlice(const short plane)
+void MainWindow::SetPlane(const short plane)
+{
+    m_plane = plane;
+}
+
+void MainWindow::ShowSlice(size_t slice)
 {
     scene->clear();
-    if (plane == XYPLANE)
+    if (m_plane == XYPLANE)
     {
         setWindowTitle("XY");
         image = QPixmap(":/images/XY.png");
     }
-    else if (plane == YZPLANE)
+    else if (m_plane == YZPLANE)
     {
         setWindowTitle("YZ");
         image = QPixmap(":/images/YZ.png");
