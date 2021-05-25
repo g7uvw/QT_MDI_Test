@@ -1,56 +1,40 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-//#include "view.h"
+#include "sliceview.h"
 
-//MainWindow::MainWindow(const short plane)
+
 MainWindow::MainWindow()
-    : viewArea(new QGraphicsView)
+    :   ui(new Ui::MainWindow), XY(new SliceView)//, YZ(new ViewWindow)
 {
-    ui->setupUi(this);
-    //isUntitled = true;
-    viewArea = new QGraphicsView;
-    scene = new QGraphicsScene(0, 0, this->x(), this->y(), this);
-    viewArea->setScene(scene);
-    //setCentralWidget(view);
-    setCentralWidget(viewArea);
+     ui->setupUi(this);
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
 
+    XY->SetPlane(XYPLANE);
+    XY->show();
+    XY_on = true;
 
 }
 
 MainWindow::~MainWindow()
 {
+    QCoreApplication::quit();
+    //delete ui;
 }
 
 
-void MainWindow::SetPlane(const short plane)
-{
-    m_plane = plane;
-}
 
-void MainWindow::ShowSlice(size_t slice)
+
+
+void MainWindow::on_actionXY_toggled(bool arg1)
 {
-    scene->clear();
-    if (m_plane == XYPLANE)
+    if (XY_on)
     {
-        setWindowTitle("XY");
-        image = QPixmap(":/images/XY.png");
-    }
-    else if (m_plane == YZPLANE)
-    {
-        setWindowTitle("YZ");
-        image = QPixmap(":/images/YZ.png");
+        XY->hide();
+        XY_on = false;
     }
     else
     {
-        setWindowTitle("XZ");
-        image = QPixmap(":/images/XZ.png");
+        XY->show();
+        XY_on = true;
     }
-
-    scene->addPixmap(image);
-    scene->update();
-    auto width = image.width();
-    auto height = image.height();
-    viewArea->resize(width,height);
-    viewArea->resize(scene->width(),scene->height());
-    viewArea->update();
 }

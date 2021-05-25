@@ -2,36 +2,22 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMainWindow>
 #include <QObject>
 #include <QWidget>
 #include <QPainter>
 #include <QtWidgets>
 #include <QtCore>
 #include <QWheelEvent>
-//#include "view.h"
+#include "sliceview.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-class QGraphicsView;
-class QGraphicsItem;
-class QPixmap;
-////class QMdiArea;
-////class QMdiSubWindow;
-////class MDI_View;
-QT_END_NAMESPACE
-
-//class MdiChild;
 //QT_BEGIN_NAMESPACE
-//class QAction;
-//class QMenu;
-//class QMdiArea;
-//class QMdiSubWindow;
+namespace Ui { class MainWindow;}
+//class QGraphicsView;
+//class QGraphicsItem;
+//class QPixmap;
+
 //QT_END_NAMESPACE
 
-const short XYPLANE = 1;
-const short XZPLANE = 2;
-const short YZPLANE = 3;
 
 class MainWindow : public QMainWindow
 {
@@ -39,29 +25,24 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow();
-    //MainWindow(const short plane);
     ~MainWindow();
-    void SetPlane(const short plane);
-    void ShowSlice(size_t slice);
+
 
 
 private:
     Ui::MainWindow *ui;
-    QGraphicsView *viewArea;
-    //QMdiArea *mdiArea;
-    //MDI_View *XY;
-   // MDI_View *XZ;
-    //MDI_View *YZ;
-
-    short m_plane;
-
     bool isUntitled;
-    QGraphicsView *view;
-    QGraphicsScene *scene;
-    QPixmap image;
+    bool XY_on = true;
+    bool XZ_on = false;
+    bool YZ_on = false;
+
+    SliceView *XY;
+    //ViewWindow *YZ;
+    //Ui::MainWindow *XZ;
 
 
 private slots:
-    //MDI_View *createMdiChild();
+
+    void on_actionXY_toggled(bool arg1);
 };
 #endif // MAINWINDOW_H

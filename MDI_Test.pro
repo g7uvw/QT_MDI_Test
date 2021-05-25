@@ -11,15 +11,15 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    toolbar.cpp
+    sliceview.cpp
 
 HEADERS += \
     mainwindow.h \
-    toolbar.h
+    sliceview.h
 
 FORMS += \
     mainwindow.ui \
-    toolbar.ui
+    sliceview.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
