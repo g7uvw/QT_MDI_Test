@@ -6,6 +6,7 @@
 MainWindow::MainWindow()
     : viewArea(new QGraphicsView)
 {
+    ui->setupUi(this);
     //isUntitled = true;
     viewArea = new QGraphicsView;
     scene = new QGraphicsScene(0, 0, this->x(), this->y(), this);
@@ -13,7 +14,6 @@ MainWindow::MainWindow()
     //setCentralWidget(view);
     setCentralWidget(viewArea);
 
-    //ShowSlice(plane);
 
 }
 

@@ -36,8 +36,8 @@ private:
     bool XZ_on = false;
     bool YZ_on = false;
 
-    Ui::MainWindow *XY;
-    Ui::MainWindow *YZ;
+    MainWindow *XY;
+    MainWindow *YZ;
     Ui::MainWindow *XZ;
 
 

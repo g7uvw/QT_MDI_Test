@@ -5,18 +5,13 @@
 
 
 ToolBar::ToolBar()
-    :   ui(new Ui::ToolBar), XY(new Ui::MainWindow)
+    :   ui(new Ui::ToolBar), XY(new MainWindow), YZ(new MainWindow)
 {
      ui->setupUi(this);
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
 
-
- //       MainWindow *XY = new MainWindow(XYPLANE);
-        //MainWindow *YZ = new MainWindow(YZPLANE);
-        //MainWindow *XZ = new MainWindow(XZPLANE);
-//        XY->show();
-    //    YZ.show();
-    //    XZ.show();
+    XY->SetPlane(XYPLANE);
+    XY->show();
 
 }
 
