@@ -37,8 +37,8 @@ private:
     bool YZ_on = false;
 
     SliceView *XY;
-    //ViewWindow *YZ;
-    //Ui::MainWindow *XZ;
+    SliceView *YZ;
+    SliceView *XZ;
 
 
 private slots:
