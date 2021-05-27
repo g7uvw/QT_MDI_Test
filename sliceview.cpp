@@ -26,28 +26,30 @@ void SliceView::SetPlane(const short plane)
 
 void SliceView::ShowSlice(size_t slice)
 {
-//    scene->clear();
-//    if (m_plane == XYPLANE)
-//    {
-//        setWindowTitle("XY");
-//        image = QPixmap(":/images/XY.png");
-//    }
-//    else if (m_plane == YZPLANE)
-//    {
-//        setWindowTitle("YZ");
-//        image = QPixmap(":/images/YZ.png");
-//    }
-//    else
-//    {
-//        setWindowTitle("XZ");
-//        image = QPixmap(":/images/XZ.png");
-//    }
+    scene->clear();
+    if (m_plane == XYPLANE)
+    {
+        setWindowTitle("XY");
+        image = QPixmap(":/images/XY.png");
+    }
+    else if (m_plane == YZPLANE)
+    {
+        setWindowTitle("YZ");
+        image = QPixmap(":/images/YZ.png");
+    }
+    else
+    {
+        setWindowTitle("XZ");
+        image = QPixmap(":/images/XZ.png");
+    }
+    scene->addPixmap(image);
+    scene->addLine(0,0,100,100,QPen(Qt::yellow));
+    //scene->addRect(QRectF(0, 0, 500, 500), QPen(Qt::black), QBrush(Qt::green));
 
-//    scene->addPixmap(image);
-//    scene->update();
-//    auto width = image.width();
-//    auto height = image.height();
-//    viewArea->resize(width,height);
-//    viewArea->resize(scene->width(),scene->height());
-//    viewArea->update();
+    scene->update();
+    //auto width = image.width();
+    //auto height = image.height();
+    //viewArea->resize(width,height);
+    //viewArea->resize(scene->width(),scene->height());
+    //viewArea->update();
 }

@@ -12,6 +12,7 @@ MainWindow::MainWindow()
     // we start up with XY view on and showing
     XY->SetPlane(XYPLANE);
     XY->setWindowTitle(QStringLiteral("XY Slice View"));
+    XY->ShowSlice(XYPLANE);
     XY->show();
     XY_on = true;
 
@@ -45,5 +46,33 @@ void MainWindow::on_actionXY_toggled(bool arg1)
     {
         XY->show();
         XY_on = true;
+    }
+}
+
+void MainWindow::on_actionYZ_toggled(bool arg1)
+{
+    if (YZ_on)
+    {
+        YZ->hide();
+        YZ_on = false;
+    }
+    else
+    {
+        YZ->show();
+        YZ_on = true;
+    }
+}
+
+void MainWindow::on_actionXZ_toggled(bool arg1)
+{
+    if (XZ_on)
+    {
+        XZ->hide();
+        XZ_on = false;
+    }
+    else
+    {
+        XZ->show();
+        XZ_on = true;
     }
 }

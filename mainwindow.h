@@ -44,5 +44,7 @@ private:
 private slots:
 
     void on_actionXY_toggled(bool arg1);
+    void on_actionYZ_toggled(bool arg1);
+    void on_actionXZ_toggled(bool arg1);
 };
 #endif // MAINWINDOW_H
