@@ -7,7 +7,7 @@ MainWindow::MainWindow()
     :   ui(new Ui::MainWindow), XY(new SliceView), YZ(new SliceView), XZ(new SliceView)
 {
      ui->setupUi(this);
-    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint|Qt::SizeHint());
 
     // we start up with XY view on and showing
     XY->SetPlane(XYPLANE);
@@ -19,10 +19,11 @@ MainWindow::MainWindow()
     // create other two views, but don't show them yet.
     YZ->SetPlane(YZPLANE);
     YZ->setWindowTitle(QStringLiteral("YZ Slice View"));
+    YZ->ShowSlice(YZPLANE);
 
     XZ->SetPlane(XZPLANE);
     XZ->setWindowTitle(QStringLiteral("XZ Slice View"));
-
+    XZ->ShowSlice(XZPLANE);
 }
 
 MainWindow::~MainWindow()
@@ -30,9 +31,6 @@ MainWindow::~MainWindow()
     QCoreApplication::quit();
     //delete ui;
 }
-
-
-
 
 
 void MainWindow::on_actionXY_toggled(bool arg1)

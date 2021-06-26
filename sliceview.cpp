@@ -9,7 +9,9 @@ SliceView::SliceView(QWidget *parent) :
     viewArea = new QGraphicsView;
 
     scene = new QGraphicsScene(this);
-    scene->setSceneRect(-1.5, -1.5, 1.5, 1.5);
+    scene->setSceneRect(QRectF());
+
+   // scene->setSceneRect(-1.5, -1.5, 1.5, 1.5);
     viewArea->setScene(scene);
     //viewArea->show();
 
@@ -61,16 +63,18 @@ void SliceView::ShowSlice(size_t slice)
     viewArea->centerOn(0, 0);
 
 
-    //scene->addLine(0,0,100,100,QPen(Qt::yellow));
+    scene->addLine(0,0,100,100,QPen(Qt::yellow));
 
 
 
 
     viewArea->update();
     scene->update();
-    //auto width = image.width();
-    //auto height = image.height();
-    //viewArea->resize(width,height);
-    //viewArea->resize(scene->width(),scene->height());
+    viewArea->show();
+    auto width = image.width();
+    auto height = image.height();
+    viewArea->resize(width,height);
+    viewArea->resize(scene->width(),scene->height());
+
 
 }
