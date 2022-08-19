@@ -7,7 +7,8 @@ MainWindow::MainWindow()
     :   ui(new Ui::MainWindow), XY(new SliceView), YZ(new SliceView), XZ(new SliceView)
 {
      ui->setupUi(this);
-    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint|Qt::SizeHint());
+    //setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint|Qt::SizeHint());
+    setWindowFlags(Qt::WindowStaysOnTopHint);
 
     // we start up with XY view on and showing
     XY->SetPlane(XYPLANE);
