@@ -11,11 +11,14 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    sliceview.cpp
+    sliceview.cpp \
+    tomslicer.cpp
 
 HEADERS += \
+    TomHeader.h \
     mainwindow.h \
-    sliceview.h
+    sliceview.h \
+    tomslicer.h
 
 FORMS += \
     mainwindow.ui \
